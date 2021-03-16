@@ -6,5 +6,6 @@ namespace API.DTO
         public string Token { get; set; }
         public string PhotoUrl { get; set; }
         public string NickName { get; set; }
+        public string FavoriteArmy { get; set; }
     }
 }

@@ -1,12 +1,15 @@
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container">
-    <a class="navbar-brand" routerLink='/'>Age of Sigmar App</a>
+    <a class="navbar-brand" routerLink='/'>Age of Sigmar Player Handbook</a>
 
     <ul class="navbar-nav mr-auto">
       <ng-container *ngIf="accountService.currentUser$ | async">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/members" routerLinkActive='active'>Lists</a>
+          <a class="nav-link" routerLink="/members" routerLinkActive='active'>Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/liked" routerLinkActive='active'>Liked</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/messages" routerLinkActive='active'>Messages</a>
@@ -19,7 +22,7 @@
 
     <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
       <img src="{{user.photoUrl}}" alt="{{user.username}}"> 
-      <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.username | titlecase}}</a>
+      <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.nickName | titlecase}}</a>
       <div class="dropdown-menu mt-3" *dropdownMenu>
         <a routerLink='/member/edit' class="dropdown-item">Edit Profile</a>
         <div class="dropdown-divider"></div>
